@@ -59,7 +59,7 @@ jobs:
         with:
           host: ${{ secrets.STAGING_HOST }}
           username: ${{ secrets.STAGING_USERNAME }}
-          key: ${{ secrets.STAGING_KEY }}
+          password: ${{ secrets.STAGING_KEY }}
           script: |
             cd /home/suna/backend
             git pull
@@ -72,7 +72,7 @@ jobs:
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USERNAME }}
-          key: ${{ secrets.PROD_KEY }}
+          password: ${{ secrets.PROD_KEY }}
           script: |
             cd /home/suna/backend
             git pull
