@@ -56,6 +56,14 @@ HARDCODED_MODEL_PRICES = {
         "input_cost_per_million_tokens": 3.00,
         "output_cost_per_million_tokens": 15.00,
     },
+    "google/gemini-2.5-pro": {
+        "input_cost_per_million_tokens": 1.25,
+        "output_cost_per_million_tokens": 10.00,
+    },
+    "openrouter/google/gemini-2.5-pro": {
+        "input_cost_per_million_tokens": 1.25,
+        "output_cost_per_million_tokens": 10.00,
+    },
 }
 
 def get_model_pricing(model: str) -> tuple[float, float] | None:
@@ -268,7 +276,7 @@ async def get_usage_logs(client, user_id: str, page: int = 0, items_per_page: in
     
     # Use fixed cutoff date: June 26, 2025 midnight UTC
     # Ignore all token counts before this date
-    cutoff_date = datetime(2025, 6, 26, 0, 0, 0, tzinfo=timezone.utc)
+    cutoff_date = datetime(2025, 6, 30, 9, 0, 0, tzinfo=timezone.utc)
     
     start_of_month = max(start_of_month, cutoff_date)
     
